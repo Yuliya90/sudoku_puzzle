@@ -1,0 +1,28 @@
+body{
+	background-color: #A0F093;
+	}
+table{
+	margin-top: 50px;
+	border-collapse: collapse;
+}
+td{
+	padding: 0;
+	border: solid 1px #151313;
+	background-color: white;
+}
+.cel{
+	padding: 0;
+	border: solid 1px #ffffff;
+	width: 28px;
+    text-align: center;
+    font-size: 25px;
+	}
+.cel:hover{
+	border-color: orange;
+	}
+.tolst{
+	border-bottom: solid 5px black;
+}
+.tolsti{
+	border-right: solid 5px black;
+}
