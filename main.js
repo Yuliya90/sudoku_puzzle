@@ -1,8 +1,18 @@
+
+function funca(elem) {
+        elem.value = 'Разгадать еще';
+    }
+     // function func(){
+     //         var elem=document.getElementById('test');
+     //         elem.value= '<div>uuuuu</div>';
+     //        }
+
+
 $(document).ready(function() {
 
     var grid = [];
-    var coll = []; //колонка
-    var field = []; //поле
+    var coll = []; 
+    var field = []; 
     var row = [];
     var rows = $('.sudoku').children().children().children();
     var pos_row, pos_cell;
@@ -27,18 +37,21 @@ $(document).ready(function() {
             }
         }
     });
-    $('.question').click(function(event) {
-        help();
-    });
-
-    function help() {
-
-    }
-
 
     $('.sudoku').append(getTable());
 
+    // $('.cel').click(function(event) {
+    //     $('.test').show(); 
+            
+    // });
+
+
     $(".cel").click(function() {
+       if(!!!$(this)[0].value) 
+        $('.help, .triangle').show(); 
+       else 
+        $('.help').hide();
+        var t;
         var mas_gor1=[];
         var mas_vert = [];
         var mas_vert1=[];
@@ -53,7 +66,6 @@ $(document).ready(function() {
                 row.push(value);
             }
             grid.push(row);
-            // console.log(row);
             row = [];
         }
         for (var i = 0; i < array_rows.length; i++) {
@@ -63,8 +75,6 @@ $(document).ready(function() {
                 for(k=0;k<mas_gor.length;k++){
                     mas_gor1.push(mas_gor[k].children[0].value);
                 }
-                // console.log(mas_gor1);
-                // console.log(mas_gor+'uuu');
                 break;
             }
         }
@@ -83,18 +93,24 @@ $(document).ready(function() {
         }
         var big_cells = get_big_cell(pos_row, pos_cell);
         var mas_kub =  getKub(big_cells.top, big_cells.left, grid);
-        console.log(array_rows.parent()[0].children);
-        console.log(mas_kub);
-        console.log("mas_vert");
-        console.log(mas_vert1);
-        console.log("mas_gor");
-        console.log(mas_gor1);
-        console.log("mas_kub");
-        console.log(mas_kub);
-        console.log(pos_cell + 'kol');
-        console.log(pos_row + 'str');
-        console.log('кандидаты:');
-        console.log(get_candidates(mas_vert1, mas_gor1,mas_kub));
+        // console.log(array_rows.parent()[0].children);
+        // console.log(mas_kub);
+        // console.log("mas_vert");
+        // console.log(mas_vert1);
+        // console.log("mas_gor");
+        // console.log(mas_gor1);
+        // console.log("mas_kub");
+        // console.log(mas_kub);
+        // console.log(pos_cell + 'kol');
+        // console.log(pos_row + 'str');
+        // console.log('кандидаты:');
+        t=get_candidates(mas_vert1, mas_gor1, mas_kub); 
+        // console.log(t);
+        t=t+" ";
+        t=t.replace(/,/g, ' '); 
+        $('.help')[0].innerHTML=t+'<div class="triangle"></div>';
+
+        
 
         // console.log(array_rows[i]);
         //  for(var i=0;i<array_rows.length;i++){
@@ -156,7 +172,6 @@ $(document).ready(function() {
                 row.push(value);
             }
             grid.push(row);
-            // console.log(row);
             row = [];
         }
         analyze(grid);
@@ -188,10 +203,9 @@ $(document).ready(function() {
         for (var i = 0; i < grid.length; i++) { //это фор по строкам
             //тут фор по ячейкам 
             for (j = 0; j < grid[i].length; j++) {
-                //тут нужно проверять ячейки на пустоту
+                //тут проверяютя ячейки на пустоту
                 //если ячека пустая, то 
                 if (!!!grid[i][j]) {
-                    //создать obj,
                     var obj = {
                         cand: [],
                         row: i,
@@ -220,15 +234,8 @@ $(document).ready(function() {
                     } else console.log('не нашли кандидатов для obj');
 
                 }
-                // console.log(grid);
 
             }
-
-
-
-            //передать в функцию 3 массива (горизонталь, вертикаль и маленький 3х3)
-            //функция должна вернуть кандидатов,
-            //передать в функцию insertCand заполненный obj.
 
         }
     }
@@ -286,8 +293,6 @@ $(document).ready(function() {
         }
         for (var stroka = 0; stroka < rows_left.length; stroka++) {
             for (var kolonka = 0; kolonka < cells_top.length; kolonka++) {
-                 // console.log(grid);
-                // console.log(grid[rows_left[stroka]].children[cells_top[kolonka]]);
                 var test_var = grid[rows_left[stroka]][cells_top[kolonka]]//.children[0].value;
                 // console.log(rows_left[stroka]);
                 // console.log(cells_top[kolonka]);
@@ -298,7 +303,7 @@ $(document).ready(function() {
                 out.push(test_var); 
             }
         }
-        console.log(grid);
+        // console.log(grid);
         return out;
     }
 
@@ -354,7 +359,5 @@ $(document).ready(function() {
         rows[obj.row].cells[obj.cell].children[0].value = obj.cand[0];
         grid[obj.row][obj.cell] = obj.cand[0];
     }
-    // $('.help').click(function(event) {
-    //     // .innerHTML();
-    // });
+    
 });

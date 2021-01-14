@@ -1,28 +1,399 @@
-body{
-	background-color: #A0F093;
-	}
-table{
-	margin-top: 50px;
-	border-collapse: collapse;
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
 }
-td{
-	padding: 0;
-	border: solid 1px #151313;
-	background-color: white;
+
+td {
+    padding: 0;
+    border: solid 1px #151313;
+    background-color: white;
 }
-.cel{
-	padding: 0;
-	border: solid 1px #ffffff;
-	width: 28px;
+
+.cel {
+    padding: 0;
+    border: solid 1px #ffffff;
+    width: 28px;
     text-align: center;
     font-size: 25px;
-	}
-.cel:hover{
-	border-color: orange;
-	}
-.tolst{
-	border-bottom: solid 5px black;
+    background-color: #F7CCCC;
 }
-.tolsti{
-	border-right: solid 5px black;
+
+.cel:hover {
+    border-color: orange;
+}
+
+.tolst {
+    border-bottom: solid 5px black;
+}
+
+.tolsti {
+    border-right: solid 5px black;
+}
+
+.help {
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    width: auto;
+    height: 30px;
+    background-color: red;
+    margin-top: 230px;
+    position: absolute;
+    margin-left: -650px;
+    display: none;
+    padding: 0 10px;
+}
+.triangle{
+	  position: absolute;
+      top: 98%;
+    left: 22%;
+    width: 55%;
+    height: 35%;
+	background:  red;
+	/*-webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);*/
+clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+.sudoku {
+    position: absolute;
+    margin-top: 545px;
+    margin-left: -650px;
+}
+
+/*текст*/
+body {
+    background: url(sakura.jpg);
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+#ui {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#ui .text {
+    margin-top: 50px;
+    position: absolute;
+    font-size: 4rem;
+    color: #fff;
+    line-height: 10rem;
+    font-family: 'Anton', sans-serif;
+    mix-blend-mode: screen;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#ui .text:nth-child(1) {
+    -webkit-clip-path: polygon(-30% 0, -20% 0, 10% 100%, 0% 100%);
+    clip-path: polygon(-30% 0, -20% 0, 10% 100%, 0% 100%);
+    -webkit-animation: wave 2000ms -10000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -10000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(2) {
+    -webkit-clip-path: polygon(-25% 0, -15% 0, 15% 100%, 5% 100%);
+    clip-path: polygon(-25% 0, -15% 0, 15% 100%, 5% 100%);
+    -webkit-animation: wave 2000ms -9800ms ease-in-out infinite alternate;
+    animation: wave 2000ms -9800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(3) {
+    -webkit-clip-path: polygon(-20% 0, -10% 0, 20% 100%, 10% 100%);
+    clip-path: polygon(-20% 0, -10% 0, 20% 100%, 10% 100%);
+    -webkit-animation: wave 2000ms -9600ms ease-in-out infinite alternate;
+    animation: wave 2000ms -9600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(4) {
+    -webkit-clip-path: polygon(-15% 0, -5% 0, 25% 100%, 15% 100%);
+    clip-path: polygon(-15% 0, -5% 0, 25% 100%, 15% 100%);
+    -webkit-animation: wave 2000ms -9400ms ease-in-out infinite alternate;
+    animation: wave 2000ms -9400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(5) {
+    -webkit-clip-path: polygon(-10% 0, 0% 0, 30% 100%, 20% 100%);
+    clip-path: polygon(-10% 0, 0% 0, 30% 100%, 20% 100%);
+    -webkit-animation: wave 2000ms -9200ms ease-in-out infinite alternate;
+    animation: wave 2000ms -9200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(6) {
+    -webkit-clip-path: polygon(-5% 0, 5% 0, 35% 100%, 25% 100%);
+    clip-path: polygon(-5% 0, 5% 0, 35% 100%, 25% 100%);
+    -webkit-animation: wave 2000ms -9000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -9000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(7) {
+    -webkit-clip-path: polygon(0% 0, 10% 0, 40% 100%, 30% 100%);
+    clip-path: polygon(0% 0, 10% 0, 40% 100%, 30% 100%);
+    -webkit-animation: wave 2000ms -8800ms ease-in-out infinite alternate;
+    animation: wave 2000ms -8800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(8) {
+    -webkit-clip-path: polygon(5% 0, 15% 0, 45% 100%, 35% 100%);
+    clip-path: polygon(5% 0, 15% 0, 45% 100%, 35% 100%);
+    -webkit-animation: wave 2000ms -8600ms ease-in-out infinite alternate;
+    animation: wave 2000ms -8600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(9) {
+    -webkit-clip-path: polygon(10% 0, 20% 0, 50% 100%, 40% 100%);
+    clip-path: polygon(10% 0, 20% 0, 50% 100%, 40% 100%);
+    -webkit-animation: wave 2000ms -8400ms ease-in-out infinite alternate;
+    animation: wave 2000ms -8400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(10) {
+    -webkit-clip-path: polygon(15% 0, 25% 0, 55% 100%, 45% 100%);
+    clip-path: polygon(15% 0, 25% 0, 55% 100%, 45% 100%);
+    -webkit-animation: wave 2000ms -8200ms ease-in-out infinite alternate;
+    animation: wave 2000ms -8200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(11) {
+    -webkit-clip-path: polygon(20% 0, 30% 0, 60% 100%, 50% 100%);
+    clip-path: polygon(20% 0, 30% 0, 60% 100%, 50% 100%);
+    -webkit-animation: wave 2000ms -8000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -8000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(12) {
+    -webkit-clip-path: polygon(25% 0, 35% 0, 65% 100%, 55% 100%);
+    clip-path: polygon(25% 0, 35% 0, 65% 100%, 55% 100%);
+    -webkit-animation: wave 2000ms -7800ms ease-in-out infinite alternate;
+    animation: wave 2000ms -7800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(13) {
+    -webkit-clip-path: polygon(30% 0, 40% 0, 70% 100%, 60% 100%);
+    clip-path: polygon(30% 0, 40% 0, 70% 100%, 60% 100%);
+    -webkit-animation: wave 2000ms -7600ms ease-in-out infinite alternate;
+    animation: wave 2000ms -7600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(14) {
+    -webkit-clip-path: polygon(35% 0, 45% 0, 75% 100%, 65% 100%);
+    clip-path: polygon(35% 0, 45% 0, 75% 100%, 65% 100%);
+    -webkit-animation: wave 2000ms -7400ms ease-in-out infinite alternate;
+    animation: wave 2000ms -7400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(15) {
+    -webkit-clip-path: polygon(40% 0, 50% 0, 80% 100%, 70% 100%);
+    clip-path: polygon(40% 0, 50% 0, 80% 100%, 70% 100%);
+    -webkit-animation: wave 2000ms -7200ms ease-in-out infinite alternate;
+    animation: wave 2000ms -7200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(16) {
+    -webkit-clip-path: polygon(45% 0, 55% 0, 85% 100%, 75% 100%);
+    clip-path: polygon(45% 0, 55% 0, 85% 100%, 75% 100%);
+    -webkit-animation: wave 2000ms -7000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -7000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(17) {
+    -webkit-clip-path: polygon(50% 0, 60% 0, 90% 100%, 80% 100%);
+    clip-path: polygon(50% 0, 60% 0, 90% 100%, 80% 100%);
+    -webkit-animation: wave 2000ms -6800ms ease-in-out infinite alternate;
+    animation: wave 2000ms -6800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(18) {
+    -webkit-clip-path: polygon(55% 0, 65% 0, 95% 100%, 85% 100%);
+    clip-path: polygon(55% 0, 65% 0, 95% 100%, 85% 100%);
+    -webkit-animation: wave 2000ms -6600ms ease-in-out infinite alternate;
+    animation: wave 2000ms -6600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(19) {
+    -webkit-clip-path: polygon(60% 0, 70% 0, 100% 100%, 90% 100%);
+    clip-path: polygon(60% 0, 70% 0, 100% 100%, 90% 100%);
+    -webkit-animation: wave 2000ms -6400ms ease-in-out infinite alternate;
+    animation: wave 2000ms -6400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(20) {
+    -webkit-clip-path: polygon(65% 0, 75% 0, 105% 100%, 95% 100%);
+    clip-path: polygon(65% 0, 75% 0, 105% 100%, 95% 100%);
+    -webkit-animation: wave 2000ms -6200ms ease-in-out infinite alternate;
+    animation: wave 2000ms -6200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(21) {
+    -webkit-clip-path: polygon(70% 0, 80% 0, 110% 100%, 100% 100%);
+    clip-path: polygon(70% 0, 80% 0, 110% 100%, 100% 100%);
+    -webkit-animation: wave 2000ms -6000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -6000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(22) {
+    -webkit-clip-path: polygon(75% 0, 85% 0, 115% 100%, 105% 100%);
+    clip-path: polygon(75% 0, 85% 0, 115% 100%, 105% 100%);
+    -webkit-animation: wave 2000ms -5800ms ease-in-out infinite alternate;
+    animation: wave 2000ms -5800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(23) {
+    -webkit-clip-path: polygon(80% 0, 90% 0, 120% 100%, 110% 100%);
+    clip-path: polygon(80% 0, 90% 0, 120% 100%, 110% 100%);
+    -webkit-animation: wave 2000ms -5600ms ease-in-out infinite alternate;
+    animation: wave 2000ms -5600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(24) {
+    -webkit-clip-path: polygon(85% 0, 95% 0, 125% 100%, 115% 100%);
+    clip-path: polygon(85% 0, 95% 0, 125% 100%, 115% 100%);
+    -webkit-animation: wave 2000ms -5400ms ease-in-out infinite alternate;
+    animation: wave 2000ms -5400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(25) {
+    -webkit-clip-path: polygon(90% 0, 100% 0, 130% 100%, 120% 100%);
+    clip-path: polygon(90% 0, 100% 0, 130% 100%, 120% 100%);
+    -webkit-animation: wave 2000ms -5200ms ease-in-out infinite alternate;
+    animation: wave 2000ms -5200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(26) {
+    -webkit-clip-path: polygon(95% 0, 105% 0, 135% 100%, 125% 100%);
+    clip-path: polygon(95% 0, 105% 0, 135% 100%, 125% 100%);
+    -webkit-animation: wave 2000ms -5000ms ease-in-out infinite alternate;
+    animation: wave 2000ms -5000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes wave {
+    0% {
+        -webkit-transform: translate(-50%, -50%) scale(0.9) rotateX(20deg) rotateY(20deg);
+        transform: translate(-50%, -50%) scale(0.9) rotateX(20deg) rotateY(20deg);
+        color: #0F1EE1;
+    }
+
+    100% {
+        -webkit-transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg);
+        transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg);
+        color: #71046D;
+    }
+}
+
+@keyframes wave {
+    0% {
+        -webkit-transform: translate(-50%, -50%) scale(0.9) rotateX(20deg) rotateY(20deg);
+        transform: translate(-50%, -50%) scale(0.9) rotateX(20deg) rotateY(20deg);
+        color: #0F1EE1;
+    }
+
+    100% {
+        -webkit-transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg);
+        transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg);
+        color: #71046D;
+    }
+}
+
+/*кнопки*/
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    color: black;
+    outline: 0;
+}
+
+.third {
+    font-family: cursive;
+    margin-top: 408px;
+    border-color: #BB1291;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #BB1291 inset, 0 0 0 0 #BB1291;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    position: absolute;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #BB1291 inset, 0 0 10px 4px #BB1291;
+}
+
+.fourth {
+    font-family: cursive;
+    position: absolute;
+    margin-top: 815px;
+    margin-left: 20px;
+    border-color: #BB1291;
+    color: black;
+    background-image: -webkit-linear-gradient(45deg, #BB1291 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #BB1291 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.fourth:hover {
+    background-position: 0;
+}
+
+.txt {
+    margin-top: 300px;
+    margin-left: -211px;
+    display: none;
+}
+
+.dscr {
+    color: blue;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 585px;
+    margin-left: 855px;
+    font-family: cursive;
+    text-align: center;
+}
+
+.btntxt {
+    border-radius: 40px;
+    background-color: antiquewhite;
+    width: 530px;
+    height: 230px;
 }
