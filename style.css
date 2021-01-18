@@ -36,22 +36,23 @@ td {
     border-radius: 10px;
     width: auto;
     height: 30px;
-    background-color: red;
-    margin-top: 230px;
+    background-color: #CC72ED;
     position: absolute;
-    margin-left: -650px;
     display: none;
     padding: 0 10px;
+    z-index: 5;
+        opacity: 0.9;
 }
-.triangle{
-	  position: absolute;
-      top: 98%;
+
+.triangle {
+    position: absolute;
+    top: 98%;
     left: 22%;
     width: 55%;
     height: 35%;
-	background:  red;
-	/*-webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);*/
-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    background: #CC72ED;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+        opacity: 0.9;
 }
 
 .sudoku {
